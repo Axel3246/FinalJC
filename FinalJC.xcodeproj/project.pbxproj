@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B9F32F32AE2A88C00CFD862 /* WaitingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F32F22AE2A88C00CFD862 /* WaitingRoomView.swift */; };
 		4258E9312AE2AC3B0053997D /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258E9302AE2AC3B0053997D /* CustomModalView.swift */; };
 		7BA7CAD62AE17D1D00D19A2E /* FinalJCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA7CAD52AE17D1D00D19A2E /* FinalJCApp.swift */; };
 		7BA7CAD82AE17D1D00D19A2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA7CAD72AE17D1D00D19A2E /* ContentView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B9F32F22AE2A88C00CFD862 /* WaitingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomView.swift; sourceTree = "<group>"; };
 		4258E9302AE2AC3B0053997D /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
 		7BA7CAD22AE17D1D00D19A2E /* FinalJC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalJC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA7CAD52AE17D1D00D19A2E /* FinalJCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalJCApp.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				7BA7CAF42AE17E0E00D19A2E /* TimerOneView.swift */,
 				7BA7CAF62AE17E2200D19A2E /* TimerTwoView.swift */,
 				7BA7CAF82AE17E2D00D19A2E /* IdeaSelectView.swift */,
+				7B9F32F22AE2A88C00CFD862 /* WaitingRoomView.swift */,
 				4258E9302AE2AC3B0053997D /* CustomModalView.swift */,
 			);
 			path = Views;
@@ -198,6 +201,7 @@
 				7BA7CAF92AE17E2D00D19A2E /* IdeaSelectView.swift in Sources */,
 				7BA7CAF72AE17E2200D19A2E /* TimerTwoView.swift in Sources */,
 				7BA7CAF12AE17DF400D19A2E /* SplashView.swift in Sources */,
+				7B9F32F32AE2A88C00CFD862 /* WaitingRoomView.swift in Sources */,
 				7BA7CAF32AE17DFE00D19A2E /* ContainerView.swift in Sources */,
 				7BA7CAED2AE17DC200D19A2E /* IdeaViewModel.swift in Sources */,
 				4258E9312AE2AC3B0053997D /* CustomModalView.swift in Sources */,
