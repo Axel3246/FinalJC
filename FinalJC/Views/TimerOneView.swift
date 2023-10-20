@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO: CHANGE VIEW TO THE IDEA UPLOAD WHEN IT ENDS (MAINTAINING CONNECTIONS)
 struct TimerOneView: View {
     
     @State private var countdown = 3

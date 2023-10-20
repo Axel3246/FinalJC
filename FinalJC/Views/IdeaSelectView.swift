@@ -9,6 +9,7 @@ import SwiftUI
 
 // Struct that creates the heart button symbol depending
 // on the state of the liked property
+// TODO: MAKE THE BUTTON AND THE "LIKED" PROPERTY TO CHANGE ON TAP...
 struct HeartBtnView: View {
     var liked: Bool
     var body: some View {
@@ -27,6 +28,7 @@ struct HeartBtnView: View {
 
 // Struct that populates the idea Stack with the ideas recollected
 // in the ideation process
+// TODO: MAKE THE BUTTON AND THE "LIKED" PROPERTY TO CHANGE ON TAP...
 struct IdeaRowView: View {
     var idea: Ideas // variable for the object
     var body: some View{
@@ -37,9 +39,7 @@ struct IdeaRowView: View {
                     .frame(alignment: .leading)
                 ZStack{
                     HStack{
-                        Button{
-                            // Like action here <--------
-                        }label: {
+                        Button(action: {}){
                             HeartBtnView(liked: idea.liked)
                         }
                     }
@@ -71,22 +71,21 @@ struct IdeaSelectView: View {
                 .navigationTitle("Idea Collection")
             }
             HStack (spacing: 10){
-                Button{
-                    // Action which will be implemented l8tr...
-                } label: {
+                Button(action: {}){
                     Text("Done")
                         .padding(.horizontal, 140)
                 }
-                // Basic customization
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                .padding(.top, 12)
-                .shadow(radius: 4)
-
             }
+            // Basic customization
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+            .padding(.top, 12)
+            .shadow(radius: 4)
+            
         }
     }
 }
+
 
 #Preview {
     IdeaSelectView()
