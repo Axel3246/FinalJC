@@ -15,8 +15,8 @@ struct ContainerView: View {
     var body: some View {
        // TimerOneView()
         if !isSplashScreenPresented{
-            //ContentView()
-            IdeaSelectView()
+            ContentView()
+            //IdeaSelectView()
         }
         else{
             // Passing the reference of the variable iSSP to change in the other view (.toggle())

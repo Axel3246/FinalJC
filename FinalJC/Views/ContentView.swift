@@ -7,6 +7,61 @@
 
 import SwiftUI
 
+struct ContentView: View {
+    
+    // Search bar variable for text lookup
+    
+    // var projectViewModel = ProjectViewModel()
+    @State private var projects = ProjectViewModel()
+    @State private var searchText = ""
+    @State private var showModalView = false
+    @State private var showCreateRoom = false
+    @State private var showJoinRoom = false
+    
+    // Variable for data display of projects
+    var projectViewModel = ProjectViewModel()
+    var mymodelview = CustomModalView()
+    
+    var body: some View {
+        // Navigation Stack for "Your Projects, SearchBar & Edit)
+        NavigationStack{
+            SearchBar(text: $searchText)
+            // HStack for Modal Button
+            
+            
+            Button{
+                showModalView.toggle()
+            }label: {
+                Text("\(Image(systemName: "plus.circle.fill")) New Project")
+                    .padding(.horizontal, 100)
+            }
+            // Basic customization
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+            .padding(.bottom, -27)
+            
+            .sheet(isPresented: $showModalView) {
+                CustomModalView()
+                    .presentationDetents([.height(170)])
+                
+            }
+            
+            List {
+                ForEach(projects.projectsConst.filter { searchText.isEmpty ? true : $0.projectTitle.localizedCaseInsensitiveContains(searchText) }) { project in
+                    NavigationLink(destination: ProjectDetailView(project: project)) {
+                        ProjectRowView(project: project)
+                    }
+                }
+            }
+            .padding(.vertical, 19)
+            
+            
+            .navigationTitle("Your Projects 😎")
+            .scrollContentBackground(.hidden)
+        }
+    }
+}
+
 
 
 // Struct that populates the list with the projects currently
@@ -23,66 +78,24 @@ struct ProjectRowView: View{
 }
 
 
-struct ContentView: View {
-
-    // Search bar variable for text lookup
-    @State private var searchText: String = ""
-    @State private var showModalView = false
-    @State private var showCreateRoom = false
-    @State private var showJoinRoom = false
-    
-    // Variable for data display of projects
-    var projectViewModel = ProjectViewModel()
-    var mymodelview = CustomModalView()
+struct SearchBar: View {
+    @Binding var text: String
     
     var body: some View {
-       // Navigation Stack for "Your Projects, SearchBar & Edit)
-        NavigationStack{
-            // HStack for Modal Button
-            HStack (spacing: 10){
-                
-            Button{
-                    showModalView.toggle()
-            }label: {
-                    Text("\(Image(systemName: "plus.circle.fill")) New Project")
-                        .padding(.horizontal, 100)
-                }
-                // Basic customization
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                .padding(.bottom, -27)
-            }
-            .sheet(isPresented: $showModalView) {
-                CustomModalView()
-                    .presentationDetents([.height(170)])
-                
-            }
-            
-            List{
-                ForEach(projectViewModel.projectsConst){project in
-                    NavigationLink(destination: ProjectDetail(project: project)) {
-                        ProjectRowView(project: project)
-                    }
-                }                .listRowSeparator(.hidden)
-               
-            }
-            .navigationTitle("Your Projects 😎")
-            .scrollContentBackground(.hidden)
-            .toolbar{
-                EditButton()
-            }
-            .searchable(text: $searchText)
+        HStack {
+            Image(systemName: "magnifyingglass")
+            TextField("Search", text: $text)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
         }
+        .padding()
     }
 }
 
 
 
-
-
-
-
-
 #Preview {
+    
     ContentView()
+    
+    
 }
