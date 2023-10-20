@@ -5,33 +5,59 @@
 //  Created by Axel Amós Hernández Cárdenas on 17/10/23.
 //
 
+
+
 import SwiftUI
 
-struct ProjectDetail: View {
-    
+
+
+struct ProjectDetailView: View {
     var project: Project
+    var detailViewModel = ProjectDetailViewModel()
+    
     
     var body: some View {
-        ZStack{
-            NavigationStack{
-                HStack {
-                    Text(project.projectTitle)
-                        .foregroundStyle(.primary)
-                }
-                HStack{
-                    Text(project.projectDate)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
+        ScrollView{
+            VStack(alignment: .leading) {
+                Text("Your favourite ideas:")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding()
                 
+                ForEach(detailViewModel.details) { detail in
+                    ForEach(detail.favouriteIdeaArray, id: \.self) { favoriteIdea in
+                        Text("\(favoriteIdea)")
+                            .font(.body)
+                            .fontWeight(.semibold)
+                    }
+                }
+                .padding()
+                
+                Text("Others' ideas:")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding()
+                
+                
+                ForEach(detailViewModel.details) { detail in
+                    ForEach(detail.otherIdeaArray, id: \.self) { favoriteIdea in
+                        Text("\(favoriteIdea)")
+                            .font(.body)
+                            .fontWeight(.semibold)
+                    }
+                    
+                }
+                .padding()
             }
-            .navigationTitle(project.projectTitle)
-            // Toolbar to track individual items
+            .padding(.bottom, 200)
+            .padding(.trailing, 90)
+            .navigationTitle("\(project.projectTitle) \(project.projectDate)")
+            
+            
         }
     }
 }
-
 #Preview {
-    let currProject = Project(projectTitle: "Taco Night Options")
-    return ProjectDetail(project: currProject)
+    let project = Project(projectTitle: "Forza Napoli", projectDate: "13/07/00")
+    return ProjectDetailView(project: project)
 }
