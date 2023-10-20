@@ -9,11 +9,6 @@ import SwiftUI
 
 @main
 struct FinalJCApp: App {
-    
-    init() {
-        UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
-    }
-    
     var body: some Scene {
         WindowGroup {
             ContainerView()
