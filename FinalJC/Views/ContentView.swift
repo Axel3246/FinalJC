@@ -29,17 +29,17 @@ struct ContentView: View {
             // HStack for Modal Button
             
             
-             Button{
-                    showModalView.toggle()
+            Button{
+                showModalView.toggle()
             }label: {
-                    Text("\(Image(systemName: "plus.circle.fill")) New Project")
-                        .padding(.horizontal, 100)
-                }
-                // Basic customization
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                .padding(.bottom, -27)
+                Text("\(Image(systemName: "plus.circle.fill")) New Project")
+                    .padding(.horizontal, 100)
             }
+            // Basic customization
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
+            .padding(.bottom, -27)
+            
             .sheet(isPresented: $showModalView) {
                 CustomModalView()
                     .presentationDetents([.height(170)])
@@ -63,6 +63,7 @@ struct ContentView: View {
                 EditButton()
             }
         }
+    
     }
 }
 
