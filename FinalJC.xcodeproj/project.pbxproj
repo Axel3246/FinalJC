@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4258E9312AE2AC3B0053997D /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258E9302AE2AC3B0053997D /* CustomModalView.swift */; };
-		4C723FC92AE2AF860055B9F4 /* ProjectDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C723FC82AE2AF860055B9F4 /* ProjectDetails.swift */; };
-		4C7479FF2AE2ADD6005B36B0 /* ProjectDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7479FE2AE2ADD6005B36B0 /* ProjectDetailViewModel.swift */; };
 		7B9F32F32AE2A88C00CFD862 /* WaitingRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F32F22AE2A88C00CFD862 /* WaitingRoomView.swift */; };
+		4258E9312AE2AC3B0053997D /* CustomModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4258E9302AE2AC3B0053997D /* CustomModalView.swift */; };
 		7BA7CAD62AE17D1D00D19A2E /* FinalJCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA7CAD52AE17D1D00D19A2E /* FinalJCApp.swift */; };
 		7BA7CAD82AE17D1D00D19A2E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA7CAD72AE17D1D00D19A2E /* ContentView.swift */; };
 		7BA7CADA2AE17D1E00D19A2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BA7CAD92AE17D1E00D19A2E /* Assets.xcassets */; };
@@ -28,10 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4258E9302AE2AC3B0053997D /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
-		4C723FC82AE2AF860055B9F4 /* ProjectDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetails.swift; sourceTree = "<group>"; };
-		4C7479FE2AE2ADD6005B36B0 /* ProjectDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewModel.swift; sourceTree = "<group>"; };
 		7B9F32F22AE2A88C00CFD862 /* WaitingRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomView.swift; sourceTree = "<group>"; };
+		4258E9302AE2AC3B0053997D /* CustomModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalView.swift; sourceTree = "<group>"; };
 		7BA7CAD22AE17D1D00D19A2E /* FinalJC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalJC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA7CAD52AE17D1D00D19A2E /* FinalJCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalJCApp.swift; sourceTree = "<group>"; };
 		7BA7CAD72AE17D1D00D19A2E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -348,7 +344,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FinalJC/Preview Content\"";
-				DEVELOPMENT_TEAM = GL423RB25N;
+				DEVELOPMENT_TEAM = V5PU6LRQPK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -361,7 +357,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lorenzoovera.FinalJC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axelhernandez.FinalJC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -377,7 +373,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FinalJC/Preview Content\"";
-				DEVELOPMENT_TEAM = GL423RB25N;
+				DEVELOPMENT_TEAM = V5PU6LRQPK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -390,7 +386,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lorenzoovera.FinalJC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.axelhernandez.FinalJC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
