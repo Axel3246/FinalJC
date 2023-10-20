@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+// TODO: GENERAL --> CHANGE VIEW WHEN IT ENDS TO IDEASELECTVIEW()
 struct TimerTwoView: View {
     
     @State private var countUp = 0
