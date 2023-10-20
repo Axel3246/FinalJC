@@ -7,26 +7,13 @@
 
 import SwiftUI
 
-
-
-// Struct that populates the list with the projects currently
-// available in the class [Project] data...
-struct ProjectRowView: View{
-    var project: Project
-    
-    var body: some View{
-        VStack{
-            Text("\(project.projectTitle)\n\(Text(project.projectDate).foregroundStyle(.secondary).font(.subheadline))")
-        }
-        .padding(.vertical, 8)
-    }
-}
-
-
 struct ContentView: View {
-
+    
     // Search bar variable for text lookup
-    @State private var searchText: String = ""
+
+    // var projectViewModel = ProjectViewModel()
+    @State private var projects = ProjectViewModel()
+    @State private var searchText = ""
     @State private var showModalView = false
     @State private var showCreateRoom = false
     @State private var showJoinRoom = false
@@ -36,12 +23,13 @@ struct ContentView: View {
     var mymodelview = CustomModalView()
     
     var body: some View {
-       // Navigation Stack for "Your Projects, SearchBar & Edit)
+        // Navigation Stack for "Your Projects, SearchBar & Edit)
         NavigationStack{
+            SearchBar(text: $searchText)
             // HStack for Modal Button
-            HStack (spacing: 10){
-                
-            Button{
+            
+            
+             Button{
                     showModalView.toggle()
             }label: {
                     Text("\(Image(systemName: "plus.circle.fill")) New Project")
@@ -58,31 +46,60 @@ struct ContentView: View {
                 
             }
             
-            List{
-                ForEach(projectViewModel.projectsConst){project in
-                    NavigationLink(destination: ProjectDetail(project: project)) {
+            List {
+                ForEach(projects.projectsConst.filter { searchText.isEmpty ? true : $0.projectTitle.localizedCaseInsensitiveContains(searchText) }) { project in
+                    NavigationLink(destination: ProjectDetailView(project: project)) {
                         ProjectRowView(project: project)
                     }
-                }                .listRowSeparator(.hidden)
-               
+                }
             }
+            .navigationTitle("Projects")
+            .padding(.vertical, -7)
+            
+            
             .navigationTitle("Your Projects 😎")
             .scrollContentBackground(.hidden)
             .toolbar{
                 EditButton()
             }
-            .searchable(text: $searchText)
         }
     }
 }
 
 
 
+// Struct that populates the list with the projects currently
+// available in the class [Project] data...
+struct ProjectRowView: View{
+    var project: Project
+    
+    var body: some View{
+        VStack{
+            Text("\(project.projectTitle)\n\(Text(project.projectDate).foregroundStyle(.secondary).font(.subheadline))")
+        }
+        .padding(.vertical, 8)
+    }
+}
 
 
+struct SearchBar: View {
+    @Binding var text: String
+    
+    var body: some View {
+        HStack {
+            Image(systemName: "magnifyingglass")
+            TextField("Search", text: $text)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+        }
+        .padding()
+    }
+}
 
 
 
 #Preview {
+    
     ContentView()
+    
+    
 }
